@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sergio Gutierrez</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">Background and Formation</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Spotlight Project</h1>
+							<iframe width="1280" height="720" src="https://www.youtube.com/embed/iOJh-AtySX4">
+							</iframe>
+
+							<p> The above video shows the project with the drawn 3D sphere after I finish compiling and rendering it (at which point, an image is generated based on what the chosen camera was able to render). You can see such image scrolling down on this page, in the slideshow. To build this project, I used openFrameworks, which is a C++ toolkit used for creative coding. It is written and built on top of OpenGL. The first step to make this project successful, was to setup a basic camera, a view plane, and a scene. Please note that because some essential parts of the source code were borrowed from Dr. Kevin Smith, I cannot share the entirety of the code (which is why I do not have this github project as public). I can, however, provide some pieces. The camera that is created for this project is stationary and along the Z axis. </p>
+							<p>The first step, was to create a light and spotlight class, both of which are children scene objects. To make it simple, scene objects are objects that can be pushed unto a scene and can be detected by a camera. The light and spot light classes have similar attributes (such as intensity), and both receive a glm vector that will serve as their location/position. Both call the draw function to draw their lights unto the scene. However, the spotlight class has additional features, such as conAngle, a direction vector, and bulb. Bulb, is simply a light object:</p>
+							<img src="images/lightclass.png" style="width:50%" class="center">
+							<br>
+							<img src="images/spotlightclass.png" style="width:67%" class="center">
+							<br>
+							<p>There is a class called "Sphere", that is able to create a Sphere primitive and push it unto the scene. One of the attributes in the class, is the diffuse color of the sphere.</p>
+							<img src="images/sphereclass.png" style="width:88%" class="center">
+							<br>
+							<p>Once I have the light, spotlight, and sphere classes, I initialize them and push them unto the scene. The following images show how I initialized and pushed the lights lightx, lighty, and lightz, as well as spotlight lighta: </p>						
+							<img src="images/midtermspotlight1.png" style="width:88%" class="center">
+							<br>
+							<img src="images/midtermspotlight2.png" style="width:60%" class="center">
+							<br>
+							<p> Once the spotlight(s) and spheres are intialized and pushed unto the scene, I proceeded to create images featuring spotlights. I restricted the direction in which the light can be emitted from the bulb attribute, making the light emission restrictions look like a cone. These restrictions are controlled in a rayTracing function, by gathering the dot product of two vectors of the spotlight class: the direction and position vectors. There's a formula that I used to do this, and here's a section of that rayTracing function, restricting the light emissions:</p>
+							<img src="images/midtermspotlight3.png" style="width:100%" class="center">
+							<br>
+							<p>After compiling and rendering, here are some of the images I generated:</p>
+							<div class="slideshow-container">
+
+								<div class="mySlides fade">
+								  <div class="numbertext">1 / 21</div>
+								  <img src="images/spotlight1.jpg" style="width:67%" class="center">
+								  <div class="text">spotlight 1</div>
+								</div>
+								
+								<div class="mySlides fade">
+								  <div class="numbertext">2 / 21</div>
+								  <img src="images/spotlight2.jpg" style="width:67%" class="center">
+								  <div class="text">spotlight 2</div>
+								</div>
+								
+								<div class="mySlides fade">
+								  <div class="numbertext">3 / 21</div>
+								  <img src="images/spotlight3.jpg" style="width:67%" class="center">
+								  <div class="text">spotlight 3</div>
+								</div>
+								
+								<div class="mySlides fade">
+									<div class="numbertext">4 / 21</div>
+									<img src="images/spotlight4.jpg" style="width:67%" class="center">
+									<div class="text">spotlight 4</div>
+								</div>
+
+								<div class="mySlides fade">
+									<div class="numbertext">5 / 21</div>
+									<img src="images/spotlight5.jpg" style="width:67%" class="center">
+									<div class="text">spotlight 5</div>
+								</div>
+
+								<div class="mySlides fade">
+									<div class="numbertext">6 / 21</div>
+									<img src="images/spotlight6.jpg" style="width:67%" class="center">
+									<div class="text">spotlight 6</div>
+								</div>
+
+								<div class="mySlides fade">
+									<div class="numbertext">7 / 21</div>
+									<img src="images/spotlight7.jpg" style="width:67%" class="center">
+									<div class="text">spotlight 7</div>
+								  </div>
+								  
+								  <div class="mySlides fade">
+									<div class="numbertext">8 / 21</div>
+									<img src="images/spotlight8.jpg" style="width:67%" class="center">
+									<div class="text">spotlight 8</div>
+								  </div>
+								  
+								  <div class="mySlides fade">
+									<div class="numbertext">9 / 21</div>
+									<img src="images/spotlight9.jpg" style="width:67%" class="center">
+									<div class="text">spotlight 9</div>
+								  </div>
+								  
+								  <div class="mySlides fade">
+									  <div class="numbertext">10 / 21</div>
+									  <img src="images/spotlight10.jpg" style="width:67%" class="center">
+									  <div class="text">spotlight 10</div>
+								  </div>
+  
+								  <div class="mySlides fade">
+									  <div class="numbertext">11 / 21</div>
+									  <img src="images/spotlight11.jpg" style="width:67%" class="center">
+									  <div class="text">spotlight 11</div>
+								  </div>
+
+								  <div class="mySlides fade">
+									<div class="numbertext">12 / 21</div>
+									<img src="images/spotlight12.jpg" style="width:67%" class="center">
+									<div class="text">spotlight 12</div>
+								  </div>
+								  
+								  <div class="mySlides fade">
+									<div class="numbertext">13 / 21</div>
+									<img src="images/spotlight13.jpg" style="width:67%" class="center">
+									<div class="text">spotlight 13</div>
+								  </div>
+								  
+								  <div class="mySlides fade">
+									<div class="numbertext">14 / 21</div>
+									<img src="images/spotlight14.jpg" style="width:67%" class="center">
+									<div class="text">spotlight 14</div>
+								  </div>
+								  
+								  <div class="mySlides fade">
+									  <div class="numbertext">15 / 21</div>
+									  <img src="images/spotlight15.jpg" style="width:67%" class="center">
+									  <div class="text">spotlight 15</div>
+								  </div>
+  
+								  <div class="mySlides fade">
+									  <div class="numbertext">16 / 21</div>
+									  <img src="images/spotlight16.jpg" style="width:67%" class="center">
+									  <div class="text">spotlight 16</div>
+								  </div>
+  
+								  <div class="mySlides fade">
+									  <div class="numbertext">17 / 21</div>
+									  <img src="images/spotlight17.jpg" style="width:67%" class="center">
+									  <div class="text">spotlight 17</div>
+								  </div>
+  
+								  <div class="mySlides fade">
+									  <div class="numbertext">18 / 21</div>
+									  <img src="images/spotlight18.jpg" style="width:67%" class="center">
+									  <div class="text">spotlight 18</div>
+									</div>
+									
+									<div class="mySlides fade">
+									  <div class="numbertext">19 / 11</div>
+									  <img src="images/spotlight19.jpg" style="width:67%" class="center">
+									  <div class="text">spotlight 19</div>
+									</div>
+									
+									<div class="mySlides fade">
+									  <div class="numbertext">20 / 21</div>
+									  <img src="images/spotlight20.jpg" style="width:67%" class="center">
+									  <div class="text">spotlight 20</div>
+									</div>
+									
+									<div class="mySlides fade">
+										<div class="numbertext">21 / 21</div>
+										<img src="images/spotlight21.jpg" style="width:67%" class="center">
+										<div class="text">spotlight 21</div>
+									</div>
+
+								<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+								<a class="next" onclick="plusSlides(1)">&#10095;</a>
+								
+								</div>
+								<br>
+								
+								<div style="text-align:center">
+								  <span class="dot" onclick="currentSlide(1)"></span> 
+								  <span class="dot" onclick="currentSlide(2)"></span> 
+								  <span class="dot" onclick="currentSlide(3)"></span> 
+								  <span class="dot" onclick="currentSlide(4)"></span> 
+								  <span class="dot" onclick="currentSlide(5)"></span> 
+								  <span class="dot" onclick="currentSlide(6)"></span>
+								  <span class="dot" onclick="currentSlide(7)"></span> 
+								  <span class="dot" onclick="currentSlide(8)"></span> 
+								  <span class="dot" onclick="currentSlide(9)"></span> 
+								  <span class="dot" onclick="currentSlide(10)"></span> 
+								  <span class="dot" onclick="currentSlide(11)"></span>
+								  <span class="dot" onclick="currentSlide(12)"></span> 
+								  <span class="dot" onclick="currentSlide(13)"></span> 
+								  <span class="dot" onclick="currentSlide(14)"></span> 
+								  <span class="dot" onclick="currentSlide(15)"></span> 
+								  <span class="dot" onclick="currentSlide(16)"></span>
+								  <span class="dot" onclick="currentSlide(17)"></span> 
+								  <span class="dot" onclick="currentSlide(18)"></span> 
+								  <span class="dot" onclick="currentSlide(19)"></span> 
+								  <span class="dot" onclick="currentSlide(20)"></span> 
+								  <span class="dot" onclick="currentSlide(21)"></span>  
+								</div>
+
+							<p>Please note that most of the pictures shown above (from the 1st to the 18th), only have spotlights in the scene with no lights. From 19th onward, I start adding lights (the last one having three lights). The reason why the first 19 images only have one spotlight (which was the focus of the project), is to display how these spotlights look like when there are no regular lights around. </p>
+						    <p>The project was awesome and I am satisfied with the imagery generated. This was a 2020 project, and I wish I could have had more time to play around with the lights. Perhaps one day, I will finish implementing Ambient and PointLights, which have slight differences from regular lights or spotlights:</p>
+							<img src="images/Ambient.png" style="width:85%" class="center">
+						</div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<section>
+						</section>
+						<section>
+							<h2>Follow</h2>
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/sergio-gutierrez-w/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/sergiogutierrez2" class="icon brands style2 fa-github"><span class="label">gitHub</span></a></li>
+							</ul>
+						</section>
+						<ul class="copyright">
+							<li>&copy; All rights reserved</li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/sliders.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

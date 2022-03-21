@@ -1,0 +1,1 @@
+This is my showcase portfolio website. Here you will find my Java, Javascript, C++, and other projects I have worked in.

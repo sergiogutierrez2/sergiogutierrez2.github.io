@@ -1,0 +1,84 @@
+body {
+    background: #00bfff;
+    align-content: center;
+    /*margin: auto;*/
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+   }
+
+   h2{
+    margin-left: 380pt;
+    font-size: 30px;
+    text-shadow: 3px 3px 5px white;
+    font-weight: bold;
+   }
+
+#result {
+    text-align: right;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-style: italic;
+    font-weight: 1000;
+    text-shadow: goldenrod;
+    
+}
+
+.button{
+    width: 150px;
+    border-width: 4px;
+    border-radius: 35px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-style: italic;
+}
+
+   table{
+       border:1px solid darkgreen;
+       border-radius: 23px;
+       box-shadow: brown;
+       background: yellowgreen;
+       border-width: 3px;
+       /*align-content: center;
+       margin-left: 210pt;
+       margin-right: 210pt;
+       margin-left:auto;
+       margin-right:auto;
+       width:80%;*/
+       width: 850px;
+       vertical-align: left;
+       margin-left: 170pt;
+   }
+
+    th, td {
+    border:1px solid black;
+    border-radius: 23px;
+    border-color: black;
+    border-style:initial;
+    box-shadow: greenyellow;
+  }
+
+  #sInfo{
+    box-shadow: white;
+    background: black;
+    background-color: gold;
+    font-style:italic;
+    font-weight: bold;
+  }
+
+.button:active{
+    font-size: 18px;
+}
+
+.grid {
+    display:flex;
+    flex-wrap: wrap;
+    height: 750px;
+    width: 1000px;
+    margin-left: 100pt;
+    cursor: pointer;
+   }
+
