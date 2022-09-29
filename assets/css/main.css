@@ -2822,6 +2822,10 @@ input, select, textarea {
 			.tiles article.style25 > .image:before {
 				background-image: url("../../images/Mastermind1.png");
 			}
+
+			.tiles article.style26 > .image:before {
+				background-image: url("../../images/G4G.png");
+			}
             
 
 			body:not(.is-touch) .tiles article:hover > .image {
@@ -3631,4 +3635,134 @@ img {vertical-align: middle;}
   /* On smaller screens, decrease text size */
   @media only screen and (max-width: 300px) {
 	.prev, .next,.text {font-size: 11px}
+  }
+
+
+  /* Slideshow container Three */
+.slideshow-containerthree {
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+  }
+  
+  .slideshow-containerfour {
+	max-width: 500px;
+	position: relative;
+	margin: auto;
+  }
+
+  /* Next & previous buttons */
+  .prevtwo, .nexttwo {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -22px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .nexttwo {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prevtwo:hover, .nexttwo:hover {
+	background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  .textthree {
+	color: black;
+	font-size: 30px;
+	font-weight: bold;
+	font-style: italic;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+  }
+  
+   /* Caption text */
+   .textfour {
+	color: black;
+	background-color: seashell;
+	font-size: 30px;
+	font-weight: bold;
+	font-style: italic;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+  }
+
+  .codeboxtwo {
+	  background-color: green;
+	  font-style: italic;
+	  padding-left: 5mm;
+	  padding-right: 5mm;
+	  padding-inline-end: 5mm;
+  }
+  
+  .inthisworldtwo {
+	  font-weight: bold;
+	  font-size: 8mm;
+	  text-align: center;
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertexttwo {
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dottwo {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+  }
+  
+  .activetwo, .dottwo:hover {
+	background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fadetwo {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fadetwo {
+	from {opacity: .4} 
+	to {opacity: 1}
+  }
+  
+  @keyframes fadetwo {
+	from {opacity: .4} 
+	to {opacity: 1}
+  }
+  
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+	.prevtwo, .nexttwo,.texttwo {font-size: 11px}
   }
