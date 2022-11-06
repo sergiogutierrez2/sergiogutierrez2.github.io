@@ -2825,6 +2825,9 @@ input, select, textarea {
 				background-image: url("../../images/FormValidator1.png");
 			}
             
+			.tiles article.style28 > .image:before {
+				background-image: url("../../images/RegistrationForm.png");
+			}
 
 			body:not(.is-touch) .tiles article:hover > .image {
 				-moz-transform: scale(1.1);
