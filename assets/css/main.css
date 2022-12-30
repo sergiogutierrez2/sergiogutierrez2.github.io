@@ -2800,7 +2800,7 @@ input, select, textarea {
 			.tiles article.style21 > .image:before {
 				background-image: url("../../images/Skeleton.png");
 			}
-/* Default */
+/* Javascript */
 			.tiles article.style22 > .image:before {
 				background-image: url("../../images/pic15.jpg");
 			}
@@ -2827,6 +2827,10 @@ input, select, textarea {
             
 			.tiles article.style28 > .image:before {
 				background-image: url("../../images/RegistrationForm.png");
+			}
+
+			.tiles article.style29 > .image:before {
+				background-image: url("../../images/RestaurantApp.png");
 			}
 
 			body:not(.is-touch) .tiles article:hover > .image {
