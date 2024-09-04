@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sergio Gutierrez</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">Background and Formation</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Skeleton Node Project</h1>
+							<iframe width="1280" height="720" src="https://www.youtube.com/embed/GsXQQQjg-yE">
+							</iframe>
+							<iframe width="1280" height="720" src="https://www.youtube.com/embed/9QiHTNManeo">
+							</iframe>
+							<p>For this project, I created an animatable Bipedal Skeleton that contains joints. The videos above, show the animated Bipedal Skeleton moving, as well as some features such as cloning. </p>
+							<p>For this project, I create a joint class, which is the child of a sphere class:</p>
+							<img src="images/skeletonProject1.png" style="width:80%" class="center">
+							<br>
+							<img src="images/skeletondeclarations.png" style="width:100%" class="center">
+							<br>
+							<p>I also added the ability to create new joints dynamically. I do this by using the "j" hot-key. If an existing joint is selected when I add a new joint, then the selected joint has to be a parent of the new one. The names of the joint are assigned as they are created (the first being joint0, then join1, joint2, etc.). I concatenate a number to the string name as the new joint is created. I add the ability for joints to be selected, moved and rotated around their center. I do this with the "x", "y" and "z" keys as rotation modifiers.</p>
+							<img src="images/skeletonKeyPressed.png" style="width:80%" class="center">
+							<br>
+							<img src="images/selectedSkeleton.png" style="width:100%" class="center">
+							<br>
+							<p>I wrote a Joint::draw() functoin that draws the joint but also draws a segmenet (bone) to its parent. The Joint is selectable.</p>
+							<img src="images/skeletonProject4.png" style="width:60%" class="center">
+							<br>
+							<img src="images/skeletonProject2.png" style="width:70%" class="center">
+							<br>
+							<p>I also created a savetoFile() function that can traverse my skeleton tree and save the structure of it to a script file. I used this format:</p>
+							<img src="images/jointCoords.png" style="width:100%" class="center">
+							<br>
+							<div class = "pone" style="font-weight: bold;">create -joint &quot;joint name&quot; -rotate &quot;&lt;x, y, z&gt;&quot; -translate &quot;&lt;x, y, z&gt;&quot; -parent &quot;name&quot;;<br>
+								Example: create -joint joint1 -rotate &lt;45.0, 90.0, 30.0&gt; -translate &lt;2.0, 2.0, 2.0&gt; -parent joint0;</div>
+							<p>Note that the translate and rotate values are relative to the parents. The completed project is shown on the top of this page. The last seconds show the file that contains the contents outputted by the saveToFile() function.</p>
+						</div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<section>
+						</section>
+						<section>
+							<h2>Follow</h2>
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/sergio-gutierrez-w/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/sergiogutierrez2" class="icon brands style2 fa-github"><span class="label">gitHub</span></a></li>
+							</ul>
+						</section>
+						<ul class="copyright">
+							<li>&copy; All rights reserved</li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

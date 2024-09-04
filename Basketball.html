@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sergio Gutierrez</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">Background and Formation</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Basketball Android Game</h1>
+							<img src="images/Android3.png" width="400" height="600" class="center">
+							<p></p>
+							<p>For this project, I used acceleration values from an accelerometer android sensor to move a basketball on the screen. For this project, I used three classes: Main Activity, Simulation view, and Particle. In the MainActivity, the displayAccelerometer and checkShake methods receive SensorEvents, and receive x, y, z values. The updatePosition of the Particle class also receives x, y and z values. These values from these two classes, manage and control the direction the ball takes depending on how the user handles their phone. Shaking it, moving it upside down, tilting it, all move the ball in one direction or another. The point of the game is to get the ball through the hoop, which can be quite difficult.</p>
+						    <p></p>
+							<img src="images/Android2.png" width="400" height="400" class="center">
+							<p></p>
+							<img src="images/Android4.png" width="400" height="400" class="center">
+							<p></p>
+							<p>The sensor values are relative to the natural orientation of the device. But the display orientation may differ from the device orientation. e.g. If you rotate your phone, the system will reorient the display into portrait or landscape mode. </p>
+							<p>In the Main Activity class, to ensure optimum utilization of system resources, we use the PowerManager in the onCreate() method with SCREEN_BRIGHT_WAKE_LOCK value to keep the screen birhgt while it is on:</p>
+
+							<p class="codebox">PowerManager mPowerManager = (PowerManager) getSystemService(POWER_SERVICE); <br>
+                             mWakeLock = mPowerManager.newWakeLock(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, TAG);</p>
+							 <p>To make use of the wake lock to keep the screen on, I added the wake lock permission on the android manifest:</p>
+							 <p class="codebox">&lt;uses-permission android:name=&quot;android.permission.WAKE_LOCK&quot;&gt;<br>&lt;/uses-permission&gt;
+								&lt;uses-feature android:name=&quot;android.hardware.sensor.accelerometer&quot;/&gt;</p>
+							 <p>The simulationView class, extends View and implements SensorEventListener interface. In the onSensorChanged() method of SensorEventListener, we gather the acceleration values along the three axis from the even.values array and timestamp of the data from event.timestamp:</p>
+							 <img src="images/sensorChanged.png" width="320" height="900" class="center">
+
+						</div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<section>
+						</section>
+						<section>
+							<h2>Follow</h2>
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/sergio-gutierrez-w/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/sergiogutierrez2" class="icon brands style2 fa-github"><span class="label">gitHub</span></a></li>
+							</ul>
+						</section>
+						<ul class="copyright">
+							<li>&copy; All rights reserved</li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
