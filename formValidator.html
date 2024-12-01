@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset"UTF-8">
+ <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="assets/css/formValidation1.css">
-
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
  <title>Form Validator 1</title>
 </head>
 <body>
@@ -15,96 +14,41 @@
   </div>
   <form class="form" id="form">
     <div class="form-control">
-      <label for="username">Username</label>
-      <input type="text" placeholder="RecruiterUsername" id="usernameValidator">
+      <label for="usernameValidator">Username</label>
+      <input type="text" placeholder="Enter your username" id="usernameValidator" aria-required="true" aria-describedby="usernameError">
       <i class="fas fa-check-circle"></i>
       <i class="fas fa-exclamation-circle"></i>
-      <small>Error Message</small>
+      <small id="usernameError">Error Message</small>
     </div>
 
     <div class="form-control">
-      <label for="username">Email</label>
-      <input type="email" placeholder="RecruiterEmail" id="emailValidator">
+      <label for="emailValidator">Email</label>
+      <input type="email" placeholder="Enter your email address" id="emailValidator" aria-required="true" aria-describedby="emailError">
       <i class="fas fa-check-circle"></i>
       <i class="fas fa-exclamation-circle"></i>
-      <small>Error Message</small>
+      <small id="emailError">Error Message</small>
     </div>
 
     <div class="form-control">
-      <label for="username">Password</label>
-      <input type="password" placeholder="RecruiterPassword" id="passwordValidator">
+      <label for="passwordValidator">Password</label>
+      <input type="password" placeholder="Enter your password" id="passwordValidator" aria-required="true" aria-describedby="passwordError">
       <i class="fas fa-check-circle"></i>
       <i class="fas fa-exclamation-circle"></i>
-      <small>Error Message</small>
+      <small id="passwordError">Error Message</small>
     </div>
 
     <div class="form-control">
-      <label for="username">Confirm Password</label>
-      <input type="password" placeholder="RecruiterConfirmPassword" id="confirmPasswordValidator">
+      <label for="confirmPasswordValidator">Confirm Password</label>
+      <input type="password" placeholder="Confirm your password" id="confirmPasswordValidator" aria-required="true" aria-describedby="confirmPasswordError">
       <i class="fas fa-check-circle"></i>
       <i class="fas fa-exclamation-circle"></i>
-      <small>Error Message</small>
+      <small id="confirmPasswordError">Error Message</small>
     </div>
-    <button>Submit</button>  
+    <button type="submit">Submit</button>  
   </form>
 </div>
 
 <script src="assets/js/formValidation.js"></script>
 
 </body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <meta charset"UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="assets/css/formValidation1.css">
-
- <title>Form Validator 1</title>
-</head>
-<body>
-<div class="container">
-  <div class="header">
-    <h2>Create Account</h2>
-  </div>
-  <form class="form" id="form">
-    <div class="form-control">
-      <label for="username">Username</label>
-      <input type="text" placeholder="RecruiterUsername" id="usernameValidator">
-      <i class="fas fa-check-circle"></i>
-      <i class="fas fa-exclamation-circle"></i>
-      <small>Error Message</small>
-    </div>
-
-    <div class="form-control">
-      <label for="username">Email</label>
-      <input type="email" placeholder="RecruiterEmail" id="emailValidator">
-      <i class="fas fa-check-circle"></i>
-      <i class="fas fa-exclamation-circle"></i>
-      <small>Error Message</small>
-    </div>
-
-    <div class="form-control">
-      <label for="username">Password</label>
-      <input type="password" placeholder="RecruiterPassword" id="passwordValidator">
-      <i class="fas fa-check-circle"></i>
-      <i class="fas fa-exclamation-circle"></i>
-      <small>Error Message</small>
-    </div>
-
-    <div class="form-control">
-      <label for="username">Confirm Password</label>
-      <input type="password" placeholder="RecruiterConfirmPassword" id="confirmPasswordValidator">
-      <i class="fas fa-check-circle"></i>
-      <i class="fas fa-exclamation-circle"></i>
-      <small>Error Message</small>
-    </div>
-    <button>Submit</button>  
-  </form>
-</div>
-
-<script src="assets/js/formValidation.js"></script>
-
-</body>
->>>>>>> ed2eae6d43226a458b587d7a2753985dffc01162
 </html>
