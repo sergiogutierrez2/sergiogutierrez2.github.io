@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sergio Gutierrez</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">Background and Formation</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Text Mapping Project</h1>
+							<img src="images/TextMapping10.jpg" width="650" height="450" class="center">
+							<br>
+							<p>This project builds and modifies two prior projects: raytracing and spotlights. There are a few concepts, such as ray tracing, initializing and pushing spheres and lights, etc., that I won't explain here. If you would like to take a look at those concepts, please check out those two projects:</p>
+							<div class="inthisworld"><a href="RayTracer.html" style="color: aquamarine;">RayTracer  Project</a></div>
+							<div class="inthisworld"><a href="Spotlight.html" style="color: aquamarine;">Spotlight  Project</a></div>
+							<br>
+							<p>In a previous project, the raytracer function would send a ray from the camera into the scene, either hitting any object such as a plane or spheres, or simply going to infinity. Anything out of the path of the rays shot by the camera, would simply not appear in the final rendered image. If the rays went to infinity, the color black would take the pixel. I would fix the particular pixels of each rendered image. Sometimes these would be 300 x 200 (for small images), 600 x 400 (for medium sized images), and 800 x 1200 for images in higher quality. The more the quality and size of the image, however, the more the project takes to compile. The project can take as much as 2 hours to compile and iterate through each of the pixels. The pixel sizes (width and height) are defined in the .h file, as the following shows: </p>
+							<img src="images/imageColor2.png" style="width:45%" class="center">
+							<br>
+							<img src="images/imageColor1.png" style="width:100%" class="center">
+                            <br>
+							<p>I used image.allocate to gather an image during the raytracing process, using the width and height set out in the .h file. Now, the rayTrace function in the RayTrace project, had these first lines: </p>
+							<img src="images/raytraceclass2.png" style="width:80%" class="center">
+                            <br>
+							<p>However, for this project, I added the a line to get the texture image:</p>
+							<img src="images/rayTraceText3.png" style="width:80%" class="center">
+							<br>
+							<p>I also created a getTexture function, which gets the color of the textured image and returns each pixel's X, Y coordinates. In this case, the name of the image is "texturethree.jpg", and is seamless.</p>
+							<img src="images/rayTraceText2.png" style="width:80%" class="center">
+							<br>
+							<p>Inside the rayTrace function, we do a few changes. If the camera's ray doesn't hit anything, the pixel color will be black. If the camera hits the plane, then call the getTexture function, pass it the nearest point of that plane, and send it the text (texture of the image). These values will be placed on the "tilecolor" variable. Otherwise, do things the same way as in the first Ray Trace project, by saving the image to a file name called "figurethree.jpg". Here's how that looks like:  </p>
+							<img src="images/rayTraceText1.png" style="width:100%" class="center">
+							<br>
+							<p>Later, we add extra if statements, in case the rays hit a sphere (such as spheres "x" or "a"), then set their color to be that of the tileColor (which contains the textures of the image). </p>
+							<img src="images/rayTraceText4.png" style="width:100%" class="center">
+							<br>
+							<p>Notice in the previous two images, I also used the phong and lambert functions (created in other projects) to add more detail to the images. The following, are some of the images generated mapping textures either on the floor plane and/or on the spheres, as well as the textures I used to wrap them around. Please note that the resolution of the images may vary slightly, and that is why some of them will be slightly pixelated.</p>
+							<div class="slideshow-container">
+
+								<div class="mySlides fade">
+								  <div class="numbertext">1 / 11</div>
+								  <img src="images/TextMapping2.jpg" style="width:100%">
+								  <div class="text">Text Mapping One</div>
+								</div>
+								
+								<div class="mySlides fade">
+								  <div class="numbertext">2 / 11</div>
+								  <img src="images/TextMapping9.jpg" style="width:100%">
+								  <div class="text">Text Mapping Two</div>
+								</div>
+								
+								<div class="mySlides fade">
+								  <div class="numbertext">3 / 11</div>
+								  <img src="images/TextMapping4.jpg" style="width:100%">
+								  <div class="text">Text Mapping Three</div>
+								</div>
+								
+								<div class="mySlides fade">
+									<div class="numbertext">4 / 11</div>
+									<img src="images/TextMapping10.jpg" style="width:100%">
+									<div class="text">Text Mapping Four</div>
+								</div>
+
+								<div class="mySlides fade">
+									<div class="numbertext">5 / 11</div>
+									<img src="images/TextMapping6.jpg" style="width:100%">
+									<div class="text">Text Mapping Five</div>
+								</div>
+
+								<div class="mySlides fade">
+									<div class="numbertext">6 / 11</div>
+									<img src="images/TextMapping7.jpg" style="width:100%">
+									<div class="text">Text Mapping Six</div>
+								</div>
+
+								<div class="mySlides fade">
+									<div class="numbertext">7 / 11</div>
+									<img src="images/texture.jpg" style="width:67%" class="center">
+									<div class="text">First Texture</div>
+								  </div>
+								  
+								  <div class="mySlides fade">
+									<div class="numbertext">8 / 11</div>
+									<img src="images/texturetwo.jpg" style="width:67%" class="center">
+									<div class="text">Second Texture</div>
+								  </div>
+								  
+								  <div class="mySlides fade">
+									<div class="numbertext">9 / 11</div>
+									<img src="images/texturethree.jpg" style="width:67%" class="center">
+									<div class="text">Third Texture</div>
+								  </div>
+								  
+								  <div class="mySlides fade">
+									  <div class="numbertext">10 / 11</div>
+									  <img src="images/texturefour.jpg" style="width:67%" class="center">
+									  <div class="text">Fourth Texture</div>
+								  </div>
+  
+								  <div class="mySlides fade">
+									  <div class="numbertext">11 / 11</div>
+									  <img src="images/texturefive.jpg" style="width:67%" class="center">
+									  <div class="text">Fifth Texture</div>
+								  </div>
+
+								<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+								<a class="next" onclick="plusSlides(1)">&#10095;</a>
+								
+								</div>
+								<br>
+								
+								<div style="text-align:center">
+								  <span class="dot" onclick="currentSlide(1)"></span> 
+								  <span class="dot" onclick="currentSlide(2)"></span> 
+								  <span class="dot" onclick="currentSlide(3)"></span> 
+								  <span class="dot" onclick="currentSlide(4)"></span> 
+								  <span class="dot" onclick="currentSlide(5)"></span> 
+								  <span class="dot" onclick="currentSlide(6)"></span>
+								  <span class="dot" onclick="currentSlide(7)"></span> 
+								  <span class="dot" onclick="currentSlide(8)"></span> 
+								  <span class="dot" onclick="currentSlide(9)"></span> 
+								  <span class="dot" onclick="currentSlide(10)"></span> 
+								  <span class="dot" onclick="currentSlide(11)"></span> 
+								</div>
+						</div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<section>
+						</section>
+						<section>
+							<h2>Follow</h2>
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/sergio-gutierrez-w/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/sergiogutierrez2" class="icon brands style2 fa-github"><span class="label">gitHub</span></a></li>
+							</ul>
+						</section>
+						<ul class="copyright">
+							<li>&copy; All rights reserved</li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+		    <script src="assets/js/sliders.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
