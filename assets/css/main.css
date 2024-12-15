@@ -3502,6 +3502,17 @@ input, select, textarea {
 	box-shadow: 3px 3px 3px rgb(21, 21, 22);
   }		
 
+  .centerFour {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	border: 3px solid blue;
+	filter: drop-shadow(5px 5px 5px #1b2003);
+	box-shadow: 3px 3px 3px rgb(21, 21, 22);
+  }		
+
+
   .pone {
 color: yellow;
   }		
