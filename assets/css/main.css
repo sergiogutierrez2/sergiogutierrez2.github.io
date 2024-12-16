@@ -2833,6 +2833,10 @@ input, select, textarea {
 				background-image: url("../../images/RestaurantApp.png");
 			}
 
+			.tiles article.style30 > .image:before {
+				background-image: url("../../images/DataCenter.png");
+			}
+
 			body:not(.is-touch) .tiles article:hover > .image {
 				-moz-transform: scale(1.1);
 				-webkit-transform: scale(1.1);
