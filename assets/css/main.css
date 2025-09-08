@@ -3674,6 +3674,12 @@ img {vertical-align: middle;}
 	margin: auto;
   }
 
+    .slideshow-containerfive {
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+  }
+
   /* Next & previous buttons */
   .prevtwo, .nexttwo {
 	cursor: pointer;
