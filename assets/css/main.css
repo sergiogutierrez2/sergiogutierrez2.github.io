@@ -2837,6 +2837,31 @@ input, select, textarea {
 				background-image: url("../../images/DataCenter.png");
 			}
 
+			.tiles article.style31 > .image:before {
+				background-image: url("../../images/PythonTile.png");
+			}
+
+			
+			.tiles article.style32 > .image:before {
+				background-image: url("../../images/LinuxTile.png");
+			}
+
+			
+			.tiles article.style33 > .image:before {
+				background-image: url("../../images/AnsibleTile.png");
+			}
+
+			
+			.tiles article.style34 > .image:before {
+				background-image: url("../../images/NetworkingTile.png");
+			}
+
+			
+			.tiles article.style35 > .image:before {
+				background-image: url("../../images/GrafanaPrometheusTile.png");
+			}
+
+
 			body:not(.is-touch) .tiles article:hover > .image {
 				-moz-transform: scale(1.1);
 				-webkit-transform: scale(1.1);
