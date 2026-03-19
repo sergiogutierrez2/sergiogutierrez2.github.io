@@ -2860,7 +2860,7 @@ input, select, textarea {
 				background-image: url("../../images/GrafanaPrometheusTile.png");
 			}
 
-			tiles article.style36 > .image:before {
+			.tiles article.style36 > .image:before {
 				background-image: url("../../images/python1tile.jpg");
 			}
 
