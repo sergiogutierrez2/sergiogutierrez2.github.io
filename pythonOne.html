@@ -51,60 +51,35 @@
 							<p>Here's how origin1.xlsx looks like:</p>
 							<img src="images/origin1.png" style="width:100%" class="center">
 							<br>
-							<p>Here's how output1.xlsx looks like:</p>
+							<p>Here's how output1.xlsx looks like before running the scripts:</p>
 							<img src="images/output1.png" style="width:100%" class="center">
 							<br>
 							<p>Here's a short view of the make_serial_list.py and make_serial_list2.py:</p>
 							<img src="images/pythonmakeserial1and2.png" style="width:100%" class="center">
 							<br>
-							<p>I added to this project a Light class, in order to be able to to add Lambert and Phong shadding. For the lambert shadding, we have the following function:</p>
-							<img src="images/lambertclass.png" style="width:100%" class="center">
+							<p>Here's a workflow of what these Python scripts do and how they interact with the two spreadsheets:
+								1- Start with origin1.xlsx, which contains repeated rows per server serial because each row represents a different sub-item or component.
+								2- Run the first script to read origin1.xlsx and locate the SERIALNUM column.
+								3- The first script cleans that serial column, removes blanks, and extracts unique serial numbers while keeping their original order.
+								4- The first script creates output1.xlsx with the final header layout, but fills only the Serial Number column.
+								5- Run the second script, which opens both origin1.xlsx and the newly created output1.xlsx.
+								6- For each serial number already listed in output1.xlsx, the second script finds all matching rows in origin1.xlsx.
+								7- It pulls the model, BMC info, and MAC-related values by checking specific source columns such as SERVERPARTNO, SUB-ITEM, and SUB-SERIAL.
+								8- It maps those extracted values into the correct target columns in output1.xlsx, such as Model, BMC Password, BMC MAC (1G), and the NIC MAC fields.
+								9- The second script writes the completed results back into output1.xlsx, or into a timestamped copy if the file is open and locked.
+								10- Final result: output1.xlsx becomes a clean, one-row-per-server sheet populated from the detailed source workbook.
+							</p>
 							<br>
-							<p>where p is the point of intersection, norm is the normal and diffuse is the diffuse color of the scene object. For the Phong shadding, we have: </p>
-							<img src="images/phongclass.png" style="width:100%" class="center">
+							<p>Running the scripts:</p>
+							<img src="images/makeserialist1and2cmd.png" style="width:100%" class="center">
 							<br>
-							<p>where p is the point of intersection, norm is the normal, diffuse is the diffuse color of the scene object, specular is the specular color (color of your highlights) and power is the phong power exponent (10-10000). The following, are 4 of the more than 30 image renditions I obtained in the process of trying to obtain an optimal image with a functional Ray Tracer:</p>		
-
-                            <div class="slideshow-container">
-
-								<div class="mySlides fade">
-								  <div class="numbertext">1 / 4</div>
-								  <img src="images/RayTracer2.jpg" style="width:100%">
-								  <div class="text">Ray Tracing, My 10th Attempt</div>
-								</div>
-								
-								<div class="mySlides fade">
-								  <div class="numbertext">2 / 4</div>
-								  <img src="images/RayTracer1.jpg" style="width:100%">
-								  <div class="text">Text Mapping, My 15th Attempt</div>
-								</div>
-								
-								<div class="mySlides fade">
-								  <div class="numbertext">3 / 4</div>
-								  <img src="images/RayTracer3.jpg" style="width:100%">
-								  <div class="text">Ray Tracing, My 22nd Attempt </div>
-								</div>
-								
-								<div class="mySlides fade">
-									<div class="numbertext">4 / 4</div>
-									<img src="images/RayTracer4.jpg" style="width:100%">
-									<div class="text">Ray Tracing, My Final and 30th Attempt</div>
-								</div>
-
-								<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-								<a class="next" onclick="plusSlides(1)">&#10095;</a>
-								
-								</div>
-								<br>
-								
-								<div style="text-align:center">
-								  <span class="dot" onclick="currentSlide(1)"></span> 
-								  <span class="dot" onclick="currentSlide(2)"></span> 
-								  <span class="dot" onclick="currentSlide(3)"></span> 
-								  <span class="dot" onclick="currentSlide(4)"></span>
-								</div>
-
-
+							<p>Output1.xlsx after running the first script, make_serial_list.py:</p>
+							<img src="images/make_serial1_output.png" style="width:100%" class="center">
+							<p>Output1.xlsx after running the second script, make_serial_list2.py:</p>
+							<img src="images/make_serial2_output.png" style="width:100%" class="center">
+							<br>
+							<p>These two scripts are useful for Supermicro servers because they automate the transformation of raw manufacturing or diagnostic data into a clean, usable inventory format.</p>
+							<p>In Supermicro workflows, tools like BOM exports, factory logs, or field diagnostics often produce messy, repetitive data (multiple rows per server with different sub-components). The first script solves this by extracting a unique list of servers (serial numbers), while the second script enriches each server with critical operational data like model, BMC credentials, and MAC addresses. This is extremely valuable because engineers and operations teams need a one-row-per-server view for tasks like provisioning, PXE boot setup, network configuration, asset tracking, RMA analysis, and large-scale deployments.</p>		
 						</div>
 					</div>
 
