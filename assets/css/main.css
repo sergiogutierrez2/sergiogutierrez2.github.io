@@ -2841,6 +2841,10 @@ input, select, textarea {
 				background-image: url("../../images/PythonTile.png");
 			}
 
+			.tiles article.style32 > .image:before {
+				background-image: url("../../images/python1tile.png");
+			}
+
 			
 			.tiles article.style32 > .image:before {
 				background-image: url("../../images/LinuxTile.png");
