@@ -2840,11 +2840,6 @@ input, select, textarea {
 			.tiles article.style31 > .image:before {
 				background-image: url("../../images/PythonTile.png");
 			}
-
-			.tiles article.style32 > .image:before {
-				background-image: url("../../images/python1tile.png");
-			}
-
 			
 			.tiles article.style32 > .image:before {
 				background-image: url("../../images/LinuxTile.png");
@@ -2864,6 +2859,11 @@ input, select, textarea {
 			.tiles article.style35 > .image:before {
 				background-image: url("../../images/GrafanaPrometheusTile.png");
 			}
+
+			tiles article.style36 > .image:before {
+				background-image: url("../../images/python1tile.png");
+			}
+
 
 
 			body:not(.is-touch) .tiles article:hover > .image {
