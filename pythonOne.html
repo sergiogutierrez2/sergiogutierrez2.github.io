@@ -46,11 +46,13 @@
 							<img src="images/pythononeFilesRequired.png" style="width:100%" class="center">
 							<br>
 							<p>Summary of the project:</p>
-							<p>Together, the two scripts form a simple data-processing pipeline: the first script reads the detailed origin1.xlsx file (which contains many repeated rows per server) and extracts a clean list of unique serial numbers, generating a structured template output1.xlsx with only the “Serial Number” column filled; the second script then takes that template, looks up each serial number back in origin1.xlsx, pulls relevant information such as model, BMC user/password, and various MAC addresses based on specific sub-item rules, and fills in the remaining columns—resulting in a final, organized spreadsheet with one complete row per server.</p>
+							<p>Together, the two python scripts (make_serial_list.py and make_serial_lis2.py), form a simple data-processing pipeline: the first script reads the detailed origin1.xlsx file (which contains many repeated rows per server) and extracts a clean list of unique serial numbers, generating a structured template output1.xlsx with only the “Serial Number” column filled; the second script then takes that template, looks up each serial number back in origin1.xlsx, pulls relevant information such as model, BMC user/password, and various MAC addresses based on specific sub-item rules, and fills in the remaining columns—resulting in a final, organized spreadsheet with one complete row per server.</p>
 							<br>
-							<img src="images/definingspheres.png" style="width:100%" class="center">
+							<p>Here's how origin1.xlsx looks like:</p>
+							<img src="images/origin1.png" style="width:100%" class="center">
 							<br>
-							<img src="images/pushingspheres.png" style="width:100%" class="center">
+							<p>Here's how output1.xlsx looks like:</p>
+							<img src="images/output1.png" style="width:100%" class="center">
 							<br>
 							<p>The program makes the camera shoot a series of rays, to generate either a 1200x800 or 600x400 pixeled image. If the ray collides with a sphere, then I take the diffuse color property of that Sphere, and make that specific pixel have the same color. I made it so that if the ray collides with a Sphere, then the ray stops traveling. This is to avoid the ray intersect various different spheres (should one sphere be in front of another). If the ray does not collide with anything (and goes to infinity), the pixel will then be the default black color. These are the essentials of RayTracing. Unfortunately, I cannot share the entirety of the code, but only the first few lines of te rayTracing function:</p>
 							<img src="images/raytraceclass2.png" style="width:80%" class="center">
