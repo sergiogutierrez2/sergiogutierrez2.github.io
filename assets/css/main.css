@@ -2864,7 +2864,9 @@ input, select, textarea {
 				background-image: url("../../images/python1tile.jpg");
 			}
 
-
+			.tiles article.style37 > .image:before {
+				background-image: url("../../images/UnderConstruction.png");
+			}
 
 			body:not(.is-touch) .tiles article:hover > .image {
 				-moz-transform: scale(1.1);
