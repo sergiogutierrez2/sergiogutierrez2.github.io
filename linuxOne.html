@@ -73,49 +73,49 @@
                             <p>ip a shows their state as down:</p>
 							<img src="images/PXENetworkConfig6.png" style="width:90%" class="centerThree">
                             <br>
-                            <p>We then set enp76s0f0 to up: </p>
+                            <p>We then set enp76s0f0 to up. ip a confirms our command worked: </p>
 							<img src="images/PXENetworkConfig7.png" style="width:90%" class="centerThree">
 							<br>
-                            <p>ip a confirms our command worked:</p>
+                            <p>We give enp76s0f0 the intended Ip address:</p>
 							<img src="images/PXENetworkConfig8.png" style="width:90%" class="centerThree">
                             <br>
-                            <p>We give enp76s0f0 the intended Ip address: </p>
+                            <p>We confirm that our intended interface is up and with the IP we wanted: </p>
 							<img src="images/PXENetworkConfig9.png" style="width:90%" class="centerThree">
 							<br>
-                            <p>We confirm that our intended interface is up and with the IP we wanted:</p>
+                            <p>We stop dnsmasq and remove all previous leases:</p>
 							<img src="images/PXENetworkConfig10.png" style="width:90%" class="centerThree">
                             <br>
-                            <p>We stop dnsmasq and remove all previous leases: </p>
+                            <p>We make sure the leases are at zero: </p>
 							<img src="images/PXENetworkConfig11.png" style="width:90%" class="centerThree">
 							<br>
-                            <p>We make sure the leases are at zero:</p>
+                            <p>We enable DHCP:</p>
 							<img src="images/PXENetworkConfig12.png" style="width:90%" class="centerThree">
                             <br>
-                             <p>We enable DHCP: </p>
+                             <p>Leases are at zero, and we reseat switches, CMMs, servers, etc, so they start getting an IP address:</p>
 							<img src="images/PXENetworkConfig13.png" style="width:90%" class="centerThree">
 							<br>
-                            <p>Leases are at zero, and we reseat switches, CMMs, servers, etc, so they start getting an IP address:</p>
+                            <p>First leases is assigned:</p>
 							<img src="images/PXENetworkConfig14.png" style="width:90%" class="centerThree">
                             <br>
-                            <p>First leases is assigned: </p>
+                            <p>More leases are assigned to more mac addresses:</p>
 							<img src="images/PXENetworkConfig15.png" style="width:90%" class="centerThree">
 							<br>
-                            <p>More leases are assigned to more mac addresses:</p>
+                            <p>ip a looks great: </p>
 							<img src="images/PXENetworkConfig16.png" style="width:90%" class="centerThree">
                             <br>
-                            <p>ip a looks great: </p>
+                            <p>I connect a server to the PXE server network, and see if it PXE boots. It does: </p>
 							<img src="images/PXENetworkConfig17.png" style="width:90%" class="centerThree">
 							<br>
-                            <p>I connect a server, and see if it PXE boots. It does:</p>
+                            <p>That server reaches the inteded PXE boot menu: </p>
 							<img src="images/PXENetworkConfig18.png" style="width:90%" class="centerThree">
                             <br>
-                            <p>That server reaches the inteded PXE boot menu: </p>
+                            <p>Previously, there was an issue with leases reaching a limit of 99:</p>
 							<img src="images/PXENetworkConfig19.png" style="width:90%" class="centerThree">
 							<br>
-                            <p>Previously, there was an issue with leases reaching a limit of 99:</p>
+                            <p>We expand the pool to 200 (inclusive of PXE's own IP):</p>
 							<img src="images/PXENetworkConfig20.png" style="width:90%" class="centerThree">
                             <br>
-                            <p>We expand the pool to 200 (inclusive of PXE's own IP): </p>
+                            <p>Many more leases are given!</p>
 							<img src="images/PXENetworkConfig21.png" style="width:90%" class="centerThree">
 							<br>
                             <p>That's it! Thanks for reading!</p>
