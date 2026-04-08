@@ -2868,6 +2868,10 @@ input, select, textarea {
 				background-image: url("../../images/UnderConstruction.png");
 			}
 
+			.tiles article.style38 > .image:before {
+				background-image: url("../../images/IntelPXEServerNetworkConfiguration.png");
+			}			
+
 			body:not(.is-touch) .tiles article:hover > .image {
 				-moz-transform: scale(1.1);
 				-webkit-transform: scale(1.1);
