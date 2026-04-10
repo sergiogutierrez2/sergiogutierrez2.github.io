@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sergio Gutierrez</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">Background and Formation.</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Intel PXE Network Configuration Task</h1>
+                            <br>
+                            <br>
+							<p>As a System Engineer working for Supermicro, I was tasked to service one of our customers, Intel, in changing some of the network configuration of one of their PXE servers, which is used to test up to 100 of their broken Data center Systems. I was tasked with the following:<br>
+                            - Give the PXE server a new static IP (approved by Intel): 192.168.1.160 <br>
+                            - Remove any previous IP leases that the PXE server previously gave. <br>
+                            - Give the IP to the correct interface they intend to use for this server: enp76s0f0<br>
+                            - Put all other interfaces down. Flush their IPs if they have any. <br>
+                            - Start / Enable DHCP, so that other servers can connect to the PXE server and get the new IP.<br>
+                            - Expand the IP leases from 50 to 200 (inclusive with the PXE's own IP).<br>
+                            - Test that other servers can boot to the PXE server.
+                            </p>
+
+                            <p>To start, we see that PXE server in its previous network configuration, had already given 27 IPs: </p>
+							<img src="images/PXENetworkConfig1.png" style="width:90%" class="centerThree">
+							<br>
+                            <p>We make sure that DHCP is disabled:</p>
+							<img src="images/PXENetworkConfig2.png" style="width:90%" class="centerThree">
+                            <br>
+                            <p>Looking at the current network configuration, we see that only enxbe3af2b6059f has an IP starting with 169.254, indicating that very likely, this system had issues communicating with DHCP:</p>
+							<img src="images/PXENetworkConfig3.png" style="width:90%" class="centerThree">
+							<br>
+                            <p>Hostname -I shows the only IP assigned to the host (again, its the 169 IP):</p>
+							<img src="images/PXENetworkConfig4.png" style="width:90%" class="centerThree">
+                            <br>
+                            <p>We proceed the ste down the interfaces that Intel wanted down and to not be used: </p>
+							<img src="images/PXENetworkConfig5.png" style="width:90%" class="centerThree">
+							<br>
+                            <p>ip a shows their state as down:</p>
+							<img src="images/PXENetworkConfig6.png" style="width:90%" class="centerThree">
+                            <br>
+                            <p>We then set enp76s0f0 to up. ip a confirms our command worked: </p>
+							<img src="images/PXENetworkConfig7.png" style="width:90%" class="centerThree">
+							<br>
+                            <p>We give enp76s0f0 the intended Ip address:</p>
+							<img src="images/PXENetworkConfig8.png" style="width:90%" class="centerThree">
+                            <br>
+                            <p>We confirm that our intended interface is up and with the IP we wanted: </p>
+							<img src="images/PXENetworkConfig9.png" style="width:90%" class="centerThree">
+							<br>
+                            <p>We stop dnsmasq and remove all previous leases:</p>
+							<img src="images/PXENetworkConfig10.png" style="width:90%" class="centerThree">
+                            <br>
+                            <p>We make sure the leases are at zero: </p>
+							<img src="images/PXENetworkConfig11.png" style="width:90%" class="centerThree">
+							<br>
+                            <p>We enable DHCP:</p>
+							<img src="images/PXENetworkConfig12.png" style="width:90%" class="centerThree">
+                            <br>
+                             <p>Leases are at zero, and we reseat switches, CMMs, servers, etc, so they start getting an IP address:</p>
+							<img src="images/PXENetworkConfig13.png" style="width:90%" class="centerThree">
+							<br>
+                            <p>First leases is assigned:</p>
+							<img src="images/PXENetworkConfig14.png" style="width:90%" class="centerThree">
+                            <br>
+                            <p>More leases are assigned to more mac addresses:</p>
+							<img src="images/PXENetworkConfig15.png" style="width:90%" class="centerThree">
+							<br>
+                            <p>ip a looks great: </p>
+							<img src="images/PXENetworkConfig16.png" style="width:90%" class="centerThree">
+                            <br>
+                            <p>I connect a server to the PXE server network, and see if it PXE boots. It does: </p>
+							<img src="images/PXENetworkConfig17.png" style="width:90%" class="centerThree">
+							<br>
+                            <p>That server reaches the inteded PXE boot menu: </p>
+							<img src="images/PXENetworkConfig18.png" style="width:90%" class="centerThree">
+                            <br>
+                            <p>Previously, there was an issue with leases reaching a limit of 99:</p>
+							<img src="images/PXENetworkConfig19.png" style="width:90%" class="centerThree">
+							<br>
+                            <p>We expand the pool to 200 (inclusive of PXE's own IP):</p>
+							<img src="images/PXENetworkConfig20.png" style="width:90%" class="centerThree">
+                            <br>
+                            <p>Many more leases are given!</p>
+							<img src="images/PXENetworkConfig21.png" style="width:90%" class="centerThree">
+							<br>
+                            <p>That's it! Thanks for reading!</p>
+						</div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<section>
+						</section>
+						<section>
+							<h2>Follow</h2>
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/sergio-gutierrez-w/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://github.com/sergiogutierrez2" class="icon brands style2 fa-github"><span class="label">gitHub</span></a></li>
+							</ul>
+						</section>
+						<ul class="copyright">
+							<li>&copy; All rights reserved</li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/sliders.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
