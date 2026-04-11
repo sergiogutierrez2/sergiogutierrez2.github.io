@@ -42,81 +42,45 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Intel PXE Network Configuration Task</h1>
+							<h1>Ansible Metadata Collector</h1>
+							<iframe width="1280" height="720" src="https://www.youtube.com/embed/yW8sjrKwwoo">
+							</iframe>
                             <br>
+							 <p>However, for this portfolio website, I will only show Ansible with 4 of the 80 nodes I worked with due to security reasons. Here's the Ansible Inventory: </p>
+							<img src="images/AnsibleDiagram.png" style="width:90%" class="centerThree">
+							<br>
                             <br>
-							<p>As a System Engineer working for Supermicro, I was tasked to service one of our customers, Intel, in changing some of the network configuration of one of their PXE servers, which is used to test up to 100 of their broken Data center Systems. I was tasked with the following:<br>
-                            - Give the PXE server a new static IP (approved by Intel): 192.168.1.160 <br>
-                            - Remove any previous IP leases that the PXE server previously gave. <br>
-                            - Give the IP to the correct interface they intend to use for this server: enp76s0f0<br>
-                            - Put all other interfaces down. Flush their IPs if they have any. <br>
-                            - Start / Enable DHCP, so that other servers can connect to the PXE server and get the new IP.<br>
-                            - Expand the IP leases from 50 to 200 (inclusive with the PXE's own IP).<br>
-                            - Test that other servers can boot to the PXE server.
+							<p>As a System Engineer working for Supermicro, I was tasked to collect metadata from 80 nodes of a cluster, using Ansible. The majority were just baremetals, but 25% or so had VMs. I collected the metadata from VMs as well. <br>
+								The metadata I was tasked to collect was the following: <br>
+								1- Architecture (such as x86_64 or ARM) <br>
+								2- CPU Memory (used and available) <br>
+								3- Disk Memory (used and available) <br>
+								4- Host <br>
+								5- Hostname <br>
+								6- Kernel <br>
+								7- OS Release <br>
+								8- Processes.
                             </p>
 
-                            <p>To start, we see that PXE server in its previous network configuration, had already given 27 IPs: </p>
-							<img src="images/PXENetworkConfig1.png" style="width:90%" class="centerThree">
+                            <p>However, for this portfolio website, I will only show Ansible with 4 of the 80 nodes I worked with due to security reasons. Here's the Ansible Inventory: </p>
+							<img src="images/AnsibleInventory.png" style="width:90%" class="centerThree">
 							<br>
-                            <p>We make sure that DHCP is disabled:</p>
-							<img src="images/PXENetworkConfig2.png" style="width:90%" class="centerThree">
+                            <p>And this is the playbook used:</p>
+							<img src="images/AnsiblePlaybook1.png" style="width:90%" class="centerThree">
                             <br>
-                            <p>Looking at the current network configuration, we see that only enxbe3af2b6059f has an IP starting with 169.254, indicating that very likely, this system had issues communicating with DHCP:</p>
-							<img src="images/PXENetworkConfig3.png" style="width:90%" class="centerThree">
+							<img src="images/AnsiblePlaybook2.png" style="width:90%" class="centerThree">
+							<img src="images/AnsiblePlaybook2.png" style="width:90%" class="centerThree">
+                            <br>
+							<p>The playbook specifies output location:</p>
+							<img src="images/AnsibleOutputDestination.png" style="width:90%" class="centerThree">
 							<br>
-                            <p>Hostname -I shows the only IP assigned to the host (again, its the 169 IP):</p>
-							<img src="images/PXENetworkConfig4.png" style="width:90%" class="centerThree">
+                            <p>Now we run the playbook. But keep in mind that at around the time this was made, the credentials for one of the hosts changed. One will fail. But that is fine, because it shows its working as intended:</p>
+							<img src="images/AnsibleRun1.png" style="width:90%" class="centerThree">
                             <br>
-                            <p>We proceed the ste down the interfaces that Intel wanted down and to not be used: </p>
-							<img src="images/PXENetworkConfig5.png" style="width:90%" class="centerThree">
+							<img src="images/AnsibleRun2.png" style="width:90%" class="centerThree">
 							<br>
-                            <p>ip a shows their state as down:</p>
-							<img src="images/PXENetworkConfig6.png" style="width:90%" class="centerThree">
-                            <br>
-                            <p>We then set enp76s0f0 to up. ip a confirms our command worked: </p>
-							<img src="images/PXENetworkConfig7.png" style="width:90%" class="centerThree">
-							<br>
-                            <p>We give enp76s0f0 the intended Ip address:</p>
-							<img src="images/PXENetworkConfig8.png" style="width:90%" class="centerThree">
-                            <br>
-                            <p>We confirm that our intended interface is up and with the IP we wanted: </p>
-							<img src="images/PXENetworkConfig9.png" style="width:90%" class="centerThree">
-							<br>
-                            <p>We stop dnsmasq and remove all previous leases:</p>
-							<img src="images/PXENetworkConfig10.png" style="width:90%" class="centerThree">
-                            <br>
-                            <p>We make sure the leases are at zero: </p>
-							<img src="images/PXENetworkConfig11.png" style="width:90%" class="centerThree">
-							<br>
-                            <p>We enable DHCP:</p>
-							<img src="images/PXENetworkConfig12.png" style="width:90%" class="centerThree">
-                            <br>
-                             <p>Leases are at zero, and we reseat switches, CMMs, servers, etc, so they start getting an IP address:</p>
-							<img src="images/PXENetworkConfig13.png" style="width:90%" class="centerThree">
-							<br>
-                            <p>First leases is assigned:</p>
-							<img src="images/PXENetworkConfig14.png" style="width:90%" class="centerThree">
-                            <br>
-                            <p>More leases are assigned to more mac addresses:</p>
-							<img src="images/PXENetworkConfig15.png" style="width:90%" class="centerThree">
-							<br>
-                            <p>ip a looks great: </p>
-							<img src="images/PXENetworkConfig16.png" style="width:90%" class="centerThree">
-                            <br>
-                            <p>I connect a server to the PXE server network, and see if it PXE boots. It does: </p>
-							<img src="images/PXENetworkConfig17.png" style="width:90%" class="centerThree">
-							<br>
-                            <p>That server reaches the inteded PXE boot menu: </p>
-							<img src="images/PXENetworkConfig18.png" style="width:90%" class="centerThree">
-                            <br>
-                            <p>Previously, there was an issue with leases reaching a limit of 99:</p>
-							<img src="images/PXENetworkConfig19.png" style="width:90%" class="centerThree">
-							<br>
-                            <p>We expand the pool to 200 (inclusive of PXE's own IP):</p>
-							<img src="images/PXENetworkConfig20.png" style="width:90%" class="centerThree">
-                            <br>
-                            <p>Many more leases are given!</p>
-							<img src="images/PXENetworkConfig21.png" style="width:90%" class="centerThree">
+                            <p>Here's the metadata that gets saved per Baremetal / VM:</p>
+							<img src="images/AnsibleMetadata.png" style="width:90%" class="centerThree">
 							<br>
                             <p>That's it! Thanks for reading!</p>
 						</div>
