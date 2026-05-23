@@ -2876,6 +2876,10 @@ input, select, textarea {
 				background-image: url("../../images/AnsibleProject1.png");
 			}			
 
+			.tiles article.style40 > .image:before {
+				background-image: url("../../images/ShrinkingImageProject.png");
+			}			
+
 
 			body:not(.is-touch) .tiles article:hover > .image {
 				-moz-transform: scale(1.1);
