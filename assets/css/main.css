@@ -2884,6 +2884,10 @@ input, select, textarea {
 				background-image: url("../../images/USBcloningproject.png");
 			}			
 
+			.tiles article.style41 > .image:before {
+				background-image: url("../../images/PXEMenuProject.png");
+			}			
+
 
 			body:not(.is-touch) .tiles article:hover > .image {
 				-moz-transform: scale(1.1);
